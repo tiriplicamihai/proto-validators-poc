@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.FieldOptions {
+  bool required_option = 50002;
+}
+
+enum Greeting {
+    NONE = 0;
+    MR = 1;
+    MRS = 2;
+    MISS = 3;
+}
+
+
+message World {
+    string text = 1 [(required_option) = true];
+}
+
+message Hello {
+    Greeting greeting = 1;
+    string name = 2;
+    World world = 3 [(required_option) = true];
+}

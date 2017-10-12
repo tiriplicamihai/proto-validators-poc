@@ -1,0 +1,7 @@
+version: '2'
+services:
+    proto-validators:
+      build: .
+      command: sleep 1000000000
+      volumes:
+        - ./:/opt/proto-validators
